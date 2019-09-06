@@ -25,6 +25,7 @@ public class Chrome implements Browser {
         }
         return chrome;
     }
+
     @Override
     public WebDriver getDriver() {
         return driver;
