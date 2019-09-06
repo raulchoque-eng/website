@@ -19,7 +19,7 @@ public class Calculator {
     @FindBy(name = "expr")
     WebElement resultTxt;
 
-    @FindBy(linkText = "=" )
+    @FindBy(linkText = "=")
     WebElement equalBtn;
 
     /**
@@ -33,7 +33,6 @@ public class Calculator {
     }
 
     /**
-     *
      * @return as String the result value of text result.
      */
     public String getResultValue() {
@@ -45,7 +44,7 @@ public class Calculator {
     /**
      * Made the operation of Addition.
      *
-     * @param firstNumber to made a addition.
+     * @param firstNumber  to made a addition.
      * @param secondNumber to made a addition
      */
     public void madeOperationAddition(int firstNumber, int secondNumber) {
@@ -57,7 +56,7 @@ public class Calculator {
     /**
      * Made the operation of subtraction.
      *
-     * @param firstNumber to made a subtraction.
+     * @param firstNumber  to made a subtraction.
      * @param secondNumber to made a subtraction
      */
     public void madeOperationSubtraction(int firstNumber, int secondNumber) {
@@ -69,7 +68,7 @@ public class Calculator {
     /**
      * Made the operation of Multiplication.
      *
-     * @param firstNumber to made a Multiplication.
+     * @param firstNumber  to made a Multiplication.
      * @param secondNumber to made a Multiplication
      */
     public void madeOperationMultiplication(int firstNumber, int secondNumber) {
@@ -81,7 +80,7 @@ public class Calculator {
     /**
      * Made the operation of Divide.
      *
-     * @param firstNumber to made a Divide.
+     * @param firstNumber  to made a Divide.
      * @param secondNumber to made a Divide
      */
     public void madeOperationDivide(int firstNumber, int secondNumber) {
@@ -97,7 +96,7 @@ public class Calculator {
      */
     private void clickEachNumber(int number) {
         String numberAsString = String.valueOf(number);
-        for (char num: numberAsString.toCharArray()) {
+        for (char num : numberAsString.toCharArray()) {
             driver.findElement(By.linkText(String.valueOf(num))).click();
         }
     }

@@ -14,7 +14,7 @@ public class Firefox implements Browser {
     private static Firefox firefox;
     private WebDriver driver;
 
-    private Firefox(){
+    private Firefox() {
         System.setProperty("webdriver.gecko.driver", "src/main/java/core/selenium/webdrivers/driver/geckodriver");
         this.driver = new FirefoxDriver();
     }

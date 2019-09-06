@@ -14,7 +14,7 @@ public class Chrome implements Browser {
     private static Chrome chrome;
     private WebDriver driver;
 
-    private Chrome(){
+    private Chrome() {
         System.setProperty("webdriver.chrome.driver", "src/main/java/core/selenium/webdrivers/driver/chromedriver");
         this.driver = new ChromeDriver();
     }

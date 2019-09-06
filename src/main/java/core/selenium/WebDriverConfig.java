@@ -14,9 +14,8 @@ public class WebDriverConfig {
 
     private static WebDriverConfig webDriverConfig;
 
-    private WebDriverConfig(){
-        nameBrowser = ReaderFile.getProperties()
-                .getProperty("name_browser");
+    private WebDriverConfig() {
+        nameBrowser = ReaderFile.getProperties().getProperty("name_browser");
     }
 
     public static WebDriverConfig getInstance() {
