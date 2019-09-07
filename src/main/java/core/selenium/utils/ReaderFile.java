@@ -21,7 +21,6 @@ public class ReaderFile {
      */
     public static Properties getProperties() {
         Properties prop = new Properties();
-//        InputStream input = null;
         try (InputStream input = new FileInputStream("gradle.properties");) {
             prop.load(input);
         } catch (FileNotFoundException ex) {
