@@ -3,7 +3,7 @@ package core.selenium;
 import core.selenium.utils.ReaderFile;
 
 /**
- * WebDriverConfig class.
+ * WebDriverConfig class, read the data to use in our project.
  *
  * @author Raul Choque
  * @version 0.0.1
