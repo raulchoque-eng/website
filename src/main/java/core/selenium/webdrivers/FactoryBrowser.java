@@ -8,7 +8,13 @@ package core.selenium.webdrivers;
  */
 public class FactoryBrowser {
 
-    public static Browser getTypeBrowser(String nameBrowser) {
+    /**
+     * Gets Browser with the parameter nameBrowser.
+     *
+     * @param nameBrowser use to create a Browser object.
+     * @return a Browser object.
+     */
+    public static Browser getBrowser(String nameBrowser) {
         Browser browser;
         if ("firefox".equals(nameBrowser)) {
             browser = Firefox.getInstance();

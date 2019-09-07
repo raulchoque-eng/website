@@ -10,5 +10,10 @@ import org.openqa.selenium.WebDriver;
  */
 public interface Browser {
 
+    /**
+     * Gets a WebDriver specific.
+     *
+     * @return as WebDriver.
+     */
     WebDriver getDriver();
 }

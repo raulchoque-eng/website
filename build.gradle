@@ -38,3 +38,10 @@ checkstyle {
 findbugs {
     toolVersion = '3.0.1'
 }
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+}

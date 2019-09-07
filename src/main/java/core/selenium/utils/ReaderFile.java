@@ -1,6 +1,7 @@
 package core.selenium.utils;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -13,14 +14,20 @@ import java.util.Properties;
  */
 public class ReaderFile {
 
+    /**
+     * Gets Properties class with data.
+     *
+     * @return a Properties object.
+     */
     public static Properties getProperties() {
         Properties prop = new Properties();
-        InputStream input = null;
-        try {
-            input = new FileInputStream("gradle.properties");
+//        InputStream input = null;
+        try (InputStream input = new FileInputStream("gradle.properties");) {
             prop.load(input);
-        } catch (IOException ex) {
+        } catch (FileNotFoundException ex) {
             ex.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return prop;
     }

@@ -10,16 +10,23 @@ import org.openqa.selenium.WebDriver;
  * @author Raul Choque
  * @version 0.0.1
  */
-public class WebDriverManager {
+public final class WebDriverManager {
 
     private static WebDriverManager webDriverManager;
     private WebDriver driver;
 
+    /**
+     * Constructor of WebDriverManager class.
+     */
     private WebDriverManager() {
-
         driver = createWebDriver(WebDriverConfig.getInstance().getNameBrowser());
     }
 
+    /**
+     * Gets single instance WebDriverManager class.
+     *
+     * @return a WebDriverManager object.
+     */
     public static WebDriverManager getInstance() {
         if (webDriverManager == null) {
             webDriverManager = new WebDriverManager();
@@ -27,11 +34,22 @@ public class WebDriverManager {
         return webDriverManager;
     }
 
+    /**
+     * Creates a WebDriver specific object from nameBrowser.
+     *
+     * @param nameBrowser uses to create a WebDriver object.
+     * @return a WebDriver object.
+     */
     private WebDriver createWebDriver(String nameBrowser) {
-        Browser browser = FactoryBrowser.getTypeBrowser(nameBrowser);
+        Browser browser = FactoryBrowser.getBrowser(nameBrowser);
         return browser.getDriver();
     }
 
+    /**
+     * Gets driver attribute of this class.
+     *
+     * @return a WebDriver object.
+     */
     public WebDriver getDriver() {
         return driver;
     }
