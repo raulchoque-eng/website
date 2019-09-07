@@ -3,7 +3,8 @@ package core.selenium.webdrivers;
 import org.openqa.selenium.WebDriver;
 
 /**
- * Browser interface.
+ * Browser interface, abstract behavior.
+ * It promise will made in the future in its sub classes.
  *
  * @author Raul Choque
  * @version 0.0.1
@@ -11,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 public interface Browser {
 
     /**
-     * Gets a WebDriver specific.
+     * Gets a WebDriver object for use a browser.
      *
      * @return as WebDriver.
      */

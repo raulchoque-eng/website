@@ -5,7 +5,8 @@ import core.selenium.webdrivers.FactoryBrowser;
 import org.openqa.selenium.WebDriver;
 
 /**
- * WebDriverManager class.
+ * WebDriverManager class, manage the WebDriver
+ * to use in our project.
  *
  * @author Raul Choque
  * @version 0.0.1

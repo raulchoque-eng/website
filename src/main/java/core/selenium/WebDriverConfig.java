@@ -18,7 +18,9 @@ public final class WebDriverConfig {
      * Constructor of WebDriverConfig class.
      */
     private WebDriverConfig() {
-        nameBrowser = ReaderFile.getProperties().getProperty("name_browser");
+
+        nameBrowser = ReaderFile.getInstance().
+                getProperty(ProjectProperties.BROWSER_NAME.getBrowserName());
     }
 
     /**
@@ -34,7 +36,7 @@ public final class WebDriverConfig {
     }
 
     /**
-     * Gets nameBrowser attriute of this class.
+     * Gets nameBrowser attribute of this class.
      *
      * @return as String the nameBrowser attribute of this class.
      */

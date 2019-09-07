@@ -4,7 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
- * Firefox class.
+ * Firefox class, create single instance of Firefox class
+ * for use the browser Firefox.
  *
  * @author Raul Choque
  * @version 0.0.1
@@ -18,7 +19,7 @@ public final class Firefox implements Browser {
      * Constructor of Firefox class.
      */
     private Firefox() {
-        System.setProperty("webdriver.gecko.driver", "src/main/java/core/selenium/webdrivers/driver/geckodriver");
+        System.setProperty("webdriver.gecko.driver", PathWebDriver.PATH_GECKO_DRIVER.getPathDriver());
         this.driver = new FirefoxDriver();
     }
 
@@ -34,6 +35,11 @@ public final class Firefox implements Browser {
         return firefox;
     }
 
+    /**
+     * Gets WebDriver for use Firefox browser.
+     *
+     * @return a WebDriver object.
+     */
     @Override
     public WebDriver getDriver() {
         return driver;

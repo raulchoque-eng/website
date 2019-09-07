@@ -4,7 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
- * Chrome class.
+ * Chrome class, creates a single instance of Chrome class
+ * for use the Chrome navigator.
  *
  * @author Raul Choque
  * @version 0.0.1
@@ -18,7 +19,7 @@ public final class Chrome implements Browser {
      * Constructor of Chrome class.
      */
     private Chrome() {
-        System.setProperty("webdriver.chrome.driver", "src/main/java/core/selenium/webdrivers/driver/chromedriver");
+        System.setProperty("webdriver.gecko.driver", PathWebDriver.PATH_CHROME_DRIVER.getPathDriver());
         this.driver = new ChromeDriver();
     }
 
@@ -34,6 +35,11 @@ public final class Chrome implements Browser {
         return chrome;
     }
 
+    /**
+     * Gets a WebDriver object for use Chrome browser.
+     *
+     * @return a  WebDriver object.
+     */
     @Override
     public WebDriver getDriver() {
         return driver;

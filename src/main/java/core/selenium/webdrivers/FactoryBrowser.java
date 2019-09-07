@@ -1,7 +1,7 @@
 package core.selenium.webdrivers;
 
 /**
- * FactoryBrowser class.
+ * FactoryBrowser class, create a specific Browser object.
  *
  * @author Raul Choque
  * @version 0.0.1

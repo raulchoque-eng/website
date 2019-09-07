@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 /**
- * ReaderFile class.
+ * ReaderFile class, reads data from properties file.
  *
  * @author Raul Choque
  * @version 0.0.1
@@ -19,12 +19,13 @@ public class ReaderFile {
      *
      * @return a Properties object.
      */
-    public static Properties getProperties() {
+    public static Properties getInstance() {
         Properties prop = new Properties();
-        try (InputStream input = new FileInputStream("gradle.properties");) {
+        try (InputStream input = new FileInputStream("gradle.properties")) {
             prop.load(input);
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
