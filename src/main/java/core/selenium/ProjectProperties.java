@@ -9,25 +9,26 @@ package core.selenium;
  */
 public enum ProjectProperties {
 
-    BROWSER_NAME("browserName");
+    BROWSER_NAME("browserName"),
+    URL_LOGIN("loginPage");
 
-    private final String browserName;
+    private final String value;
 
     /**
      * Constructor of ProjectProperties enum.
      *
-     * @param browserName value for create a ProjectProperties enum.
+     * @param value value for create a ProjectProperties enum.
      */
-    ProjectProperties(String browserName) {
-        this.browserName = browserName;
+    ProjectProperties(String value) {
+        this.value = value;
     }
 
     /**
-     * gets value of browserName constant of this enum.
+     * gets value of value constant of this enum.
      *
-     * @return as String browserName constant.
+     * @return as String value constant.
      */
-    public String getBrowserName() {
-        return browserName;
+    public String getValue() {
+        return value;
     }
 }

@@ -20,7 +20,7 @@ public final class WebDriverConfig {
     private WebDriverConfig() {
 
         nameBrowser = ReaderFile.getInstance().
-                getProperty(ProjectProperties.BROWSER_NAME.getBrowserName());
+                getProperty(ProjectProperties.BROWSER_NAME.getValue());
     }
 
     /**

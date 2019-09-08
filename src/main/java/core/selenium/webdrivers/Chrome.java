@@ -19,7 +19,7 @@ public final class Chrome implements Browser {
      * Constructor of Chrome class.
      */
     private Chrome() {
-        System.setProperty("webdriver.gecko.driver", PathWebDriver.PATH_CHROME_DRIVER.getPathDriver());
+        System.setProperty("webdriver.chrome.driver", PathWebDriver.PATH_CHROME_DRIVER.getPathDriver());
         this.driver = new ChromeDriver();
     }
 
