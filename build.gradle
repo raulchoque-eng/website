@@ -1,11 +1,17 @@
 plugins {
     id 'java'
+    id 'findbugs'
+    id 'checkstyle'
 }
 
 group 'AT-10'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+
+test {
+    useTestNG()
+}
 
 repositories {
     mavenCentral()
@@ -23,4 +29,19 @@ dependencies {
     // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
     compile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '3.6.2'
     compile group: 'net.masterthought', name: 'cucumber-reporting', version: '4.6.0'
+}
+
+checkstyle {
+    toolVersion = '8.1'
+}
+
+findbugs {
+    toolVersion = '3.0.1'
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
 }
