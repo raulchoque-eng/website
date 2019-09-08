@@ -1,19 +1,25 @@
 package website.ui.pages;
 
+import core.selenium.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 /**
- * BasePage class.
+ * BasePage class, initialise BasePage class
+ * and all webElement into it.
  *
  * @author Raul Choque
  * @version 0.0.1
  */
-public class BasePage {
+public abstract class BasePage {
 
-    private WebDriver driver;
-    private String url;
+    protected WebDriver driver;
 
-    public BasePage(WebDriver driver) {
-        this.driver = driver;
+    /**
+     * Constructor of BasePage class.
+     */
+    public BasePage() {
+        this.driver = WebDriverManager.getInstance().getDriver();
+        PageFactory.initElements(driver, this);
     }
 }

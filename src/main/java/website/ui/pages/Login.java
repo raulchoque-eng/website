@@ -1,20 +1,20 @@
 package website.ui.pages;
 
-import org.openqa.selenium.WebDriver;
+import core.selenium.utils.ReaderFile;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 /**
- * Login class.
+ * Login class, create a PageObject of Login page
+ * to interact with the UI of that page.
  *
  * @author Raul Choque
  * @version 0.0.1
  */
-public class Login extends BasePage{
+public class Login extends BasePage {
 
     @FindBy(id = "username")
-    private WebElement userNameTxt;
+    private WebElement usernameTxt;
 
     @FindBy(id = "password")
     private WebElement passwordTxt;
@@ -22,28 +22,42 @@ public class Login extends BasePage{
     @FindBy(xpath = "//button[@id='signin-submit2' or @title='Log In']")
     private WebElement logInBtn;
 
-    public Login(WebDriver driver) {
-        super(driver);
-        PageFactory.initElements(driver, this);
+    /**
+     * Writes in usernameTxt WebElement the username parameter.
+     *
+     * @param username is to write in usernameTxt WebElement.
+     */
+    public void writeInUsername(String username) {
+        usernameTxt.clear();
+        usernameTxt.sendKeys(username);
     }
 
-    public void writeUserName(String username) {
-        userNameTxt.clear();
-        userNameTxt.sendKeys(username);
-    }
-
-    public void writePassword(String password) {
+    /**
+     * Writes in passwordTxt WebElement the password parameter.
+     *
+     * @param password is to write in passwordTxt WebElement.
+     */
+    public void writeInPassword(String password) {
         passwordTxt.clear();
         passwordTxt.sendKeys(password);
     }
 
-    public void clickLogIn(){
+    /**
+     * Clicks to submit login form.
+     */
+    public void clickSubmit() {
         logInBtn.click();
     }
 
-    public void logIn(String userName, String password) {
-        writeUserName(userName);
-        writePassword(password);
-        clickLogIn();
+    /**
+     * LogIn with username and password parameter.
+     *
+     * @param username is to complete in LogIn form.
+     * @param password is to complete in LogIn form.
+     */
+    public void logIn(String username, String password) {
+        writeInUsername(ReaderFile.getInstance().getProperty(username));
+        writeInPassword(ReaderFile.getInstance().getProperty(password));
+        clickSubmit();
     }
 }
